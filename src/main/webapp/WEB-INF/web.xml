@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <context-param>
+        <param-name>debug</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <session-config>  <!--  10 minutes -->
+        <session-timeout>10</session-timeout>
+    </session-config>
+
+  <display-name>SpringHibernateTut</display-name>
+    <servlet>
+        <display-name>TestDbServlet</display-name>
+        <servlet-name>TestDbServlet</servlet-name>
+        <servlet-class>com.evolveback.testdb.TestDbServlet</servlet-class>
+        <init-param>
+            <param-name>sleep-time-in-seconds</param-name>
+            <param-value>10</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring-mvc-crud-demo-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestDbServlet</servlet-name>
+        <url-pattern>/TestDbServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
