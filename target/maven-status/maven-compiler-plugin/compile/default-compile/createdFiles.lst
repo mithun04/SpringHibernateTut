@@ -1,2 +1,8 @@
 com/evolveback/springdemo/controller/CustomerController.class
 com/evolveback/testdb/TestDbServlet.class
+com/evolveback/springdemo/dao/CustomerDAO.class
+com/evolveback/springdemo/controller/HomeController.class
+com/evolveback/springdemo/entity/Customer.class
+com/evolveback/springdemo/dao/CustomerDAOImpl.class
+com/evolveback/springdemo/service/CustomerService.class
+com/evolveback/springdemo/service/CustomerServiceImpl.class
